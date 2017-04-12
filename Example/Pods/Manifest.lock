@@ -1,0 +1,16 @@
+PODS:
+  - Associate (0.1.0)
+
+DEPENDENCIES:
+  - Associate (from `../`)
+
+EXTERNAL SOURCES:
+  Associate:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Associate: a2ed35ea41836b22bab54f01d85184c8691dc739
+
+PODFILE CHECKSUM: bccdce31c0b21a752d3e5e202e873296d4bfbc74
+
+COCOAPODS: 1.2.0
