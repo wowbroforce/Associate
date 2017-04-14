@@ -1,10 +1,5 @@
 # Associate
 
-[![CI Status](http://img.shields.io/travis/wowbroforce/Associate.svg?style=flat)](https://travis-ci.org/wowbroforce/Associate)
-[![Version](https://img.shields.io/cocoapods/v/Associate.svg?style=flat)](http://cocoapods.org/pods/Associate)
-[![License](https://img.shields.io/cocoapods/l/Associate.svg?style=flat)](http://cocoapods.org/pods/Associate)
-[![Platform](https://img.shields.io/cocoapods/p/Associate.svg?style=flat)](http://cocoapods.org/pods/Associate)
-
 ## Description
 
 This set of methods helps to reduce an amount of a boilerplate code when working with Associated Objects.
