@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Associate'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Associate.'
+  s.summary          = 'Helper methods for working with Associated Objects.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
