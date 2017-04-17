@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This set of methods helps to reduce an amount of a boilerplate code when working with Associated Objects.
                        DESC
 
   s.homepage         = 'https://github.com/wowbroforce/Associate'
@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Associate/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'Associate' => ['Associate/Assets/*.png']
   # }
