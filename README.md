@@ -6,23 +6,25 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 
 ## Installation
 
-To install Associate, simply add the following line to your Podfile:
+To install Associate, simply add the following lines to your Podfile:
 
 ```ruby
+source 'git@github.com:wowbroforce/Specs.git'
+
 pod "Associate"
 ```
 
 ## Usage
 
 ```swift
-extension NSObject {
+extension UIView {
   static var identifierKey: Void?
   var identifier: String {
     get {
-      return associated(with: self, by: &identifierKey)
+      return associated(with: self, by: &UIView.identifierKey)
     }
     set {
-      associate(value: newValue, with: self, by: &identifierKey)
+      associate(value: newValue, with: self, by: &UIView.identifierKey)
     }
   }
 }

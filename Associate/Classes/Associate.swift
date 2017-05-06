@@ -24,13 +24,11 @@ public func associated<T: Associable>(with object: Any, by key: UnsafeRawPointer
     guard let value: T = objc_getAssociatedObject(object, key) as? T else {
         let newValue = T.default()
         objc_setAssociatedObject(object, key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return newValue as! T
+        return newValue
     }
     return value
 }
 
 public protocol Associable {
-    associatedtype Element
-    
-    static func `default`() -> Element
+    static func `default`() -> Self
 }
