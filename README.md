@@ -9,9 +9,7 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 To install Associate, simply add the following lines to your Podfile:
 
 ```ruby
-source 'git@github.com:wowbroforce/Specs.git'
-
-pod "Associate"
+pod 'Associate', :podspec => 'https://raw.githubusercontent.com/wowbroforce/Associate/master/Associate.podspec'
 ```
 
 ## Usage
