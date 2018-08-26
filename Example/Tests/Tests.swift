@@ -49,7 +49,7 @@ extension XCTestCase {
     }
 }
 
-class Foo: Associable {
+final class Foo: Associable {
     let testCase: XCTestCase?
     var value: Int = 0
     
