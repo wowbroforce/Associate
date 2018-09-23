@@ -32,7 +32,7 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 
   s.source_files = 'Associate/Classes/**/*'
   
-  s.version = '4.2'
+  s.swift_version = '4.2'
 
   # s.resource_bundles = {
   #   'Associate' => ['Associate/Assets/*.png']
