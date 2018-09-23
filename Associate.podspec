@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Associate'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = 'Helper methods for working with Associated Objects.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,8 @@ This set of methods helps to reduce an amount of a boilerplate code when working
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Associate/Classes/**/*'
+  
+  s.version = '4.2'
 
   # s.resource_bundles = {
   #   'Associate' => ['Associate/Assets/*.png']
