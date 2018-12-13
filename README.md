@@ -7,31 +7,88 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 ## Installation
 
 To install Associate, simply add the following lines to your Podfile:
-
 ```ruby
-pod 'Associate', :podspec => 'https://raw.githubusercontent.com/wowbroforce/Associate/master/Associate.podspec'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/wowbroforce/Specs.git'
+
+...
+
+pod 'Associate'
 ```
 
 ## Usage
 
+Examples:
+
 ```swift
-extension UIView {
-  static var identifierKey: Void?
-  var identifier: String {
-    get {
-      return associated(with: self, by: &UIView.identifierKey)
+import UIKit
+import Associate
+
+private var textColorNameKey: Void?
+
+extension UILabel {
+    @IBInspectable var textColorName: String? {
+        get {
+            return associated(with: self, by: &textColorNameKey, default: { nil })
+        }
+        set {
+            return associate(value: newValue, with: self, by: &textColorNameKey)
+        }
     }
-    set {
-      associate(value: newValue, with: self, by: &UIView.identifierKey)
-    }
-  }
 }
 ```
 
 ```swift
-let view = UIView()
-view.identifier = "some identifier"
-print(view.identifier) // 'some identifier' text will be printed
+import Foundation
+import Associate
+
+protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
+
+    func transform(input: Input) -> Output
+}
+
+private var errorTrackerKey: Void?
+private var activityIndicatorKey: Void?
+
+extension ViewModelType {
+    var errorTracker: ErrorTracker {
+        get {
+            return associated(with: self, by: &errorTrackerKey) { ErrorTracker() }
+        }
+        set {
+            associate(value: newValue, with: self, by: &errorTrackerKey)
+        }
+    }
+
+    var activityIndicator: ActivityIndicator {
+        get {
+            return associated(with: self, by: &activityIndicatorKey) { ActivityIndicator() }
+        }
+        set {
+            associate(value: newValue, with: self, by: &activityIndicatorKey)
+        }
+    }
+}
+```
+
+```swift
+import RxSwift
+import Associate
+
+private var disposeBagKey: Void?
+
+extension NSObject {
+    var disposeBag: DisposeBag {
+        get {
+            return associated(with: self, by: &disposeBagKey) { DisposeBag() }
+        }
+        set {
+            associate(value: newValue, with: self, by: &disposeBagKey)
+        }
+    }
+}
 ```
 
 ## Author
