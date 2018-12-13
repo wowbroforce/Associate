@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func associate(value: Any, with object: Any, by key: UnsafeRawPointer, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+public func associate<T>(value: T, with object: Any, by key: UnsafeRawPointer, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
     objc_sync_enter(object)
     defer {
         objc_sync_exit(object)
@@ -16,19 +16,23 @@ public func associate(value: Any, with object: Any, by key: UnsafeRawPointer, po
     objc_setAssociatedObject(object, key, value, policy)
 }
 
-public func associated<T: Associable>(with object: Any, by key: UnsafeRawPointer) -> T {
+public func associate<T>(value: T?, with object: Any, by key: UnsafeRawPointer, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+    objc_sync_enter(object)
+    defer {
+        objc_sync_exit(object)
+    }
+    objc_setAssociatedObject(object, key, value, policy)
+}
+
+public func associated<T>(with object: Any, by key: UnsafeRawPointer, default: () -> T) -> T {
     objc_sync_enter(object)
     defer {
         objc_sync_exit(object)
     }
     guard let value: T = objc_getAssociatedObject(object, key) as? T else {
-        let newValue = T.default()
+        let newValue = `default`()
         objc_setAssociatedObject(object, key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return newValue
     }
     return value
-}
-
-public protocol Associable {
-    static func `default`() -> Self
 }

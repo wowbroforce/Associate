@@ -1,5 +1,5 @@
 PODS:
-  - Associate (0.1.0)
+  - Associate (0.3.1)
 
 DEPENDENCIES:
   - Associate (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Associate: a2ed35ea41836b22bab54f01d85184c8691dc739
+  Associate: 13a87a5d116f1ff449f57ea16674491c0c76acc5
 
 PODFILE CHECKSUM: bccdce31c0b21a752d3e5e202e873296d4bfbc74
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

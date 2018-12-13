@@ -41,7 +41,7 @@ extension XCTestCase {
     static var counterKey: Void?
     var counter: Foo {
         get {
-            return associated(with: self, by: &XCTestCase.counterKey)
+            return associated(with: self, by: &XCTestCase.counterKey) { Foo() }
         }
         set {
             associate(value: newValue, with: self, by: &XCTestCase.counterKey)
@@ -49,15 +49,12 @@ extension XCTestCase {
     }
 }
 
-final class Foo: Associable {
+final class Foo {
     let testCase: XCTestCase?
     var value: Int = 0
     
     init(testCase: XCTestCase? = nil) {
         self.testCase = testCase
-    }
-    static func `default`() -> Foo {
-        return Foo()
     }
 
     deinit {

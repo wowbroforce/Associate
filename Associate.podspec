@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Associate'
-  s.version          = '0.3.1'
+  s.version          = '1.0.0'
   s.summary          = 'Helper methods for working with Associated Objects.'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,6 @@ This set of methods helps to reduce an amount of a boilerplate code when working
                        DESC
 
   s.homepage         = 'https://github.com/wowbroforce/Associate'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wowbroforce' => 'wowbroforce@gmail.com' }
   s.source           = { :git => 'https://github.com/wowbroforce/Associate.git', :tag => s.version.to_s }
@@ -33,12 +32,4 @@ This set of methods helps to reduce an amount of a boilerplate code when working
   s.source_files = 'Associate/Classes/**/*'
   
   s.swift_version = '4.2'
-
-  # s.resource_bundles = {
-  #   'Associate' => ['Associate/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
