@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Associate'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Helper methods for working with Associated Objects.'
 
 # This description is used to generate tags and improve search results.
@@ -31,5 +31,5 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 
   s.source_files = 'Associate/Classes/**/*'
   
-  s.swift_version = '4.2'
+  s.swift_version = '5.1.2'
 end
