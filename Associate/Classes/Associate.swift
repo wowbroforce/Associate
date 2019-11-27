@@ -24,14 +24,14 @@ public func associate<T>(value: T?, with object: Any, by key: UnsafeRawPointer, 
     objc_setAssociatedObject(object, key, value, policy)
 }
 
-public func associated<T>(with object: Any, by key: UnsafeRawPointer, default: () -> T) -> T {
+public func associated<T>(with object: Any, by key: UnsafeRawPointer, default: () -> T, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) -> T {
     objc_sync_enter(object)
     defer {
         objc_sync_exit(object)
     }
     guard let value: T = objc_getAssociatedObject(object, key) as? T else {
         let newValue = `default`()
-        objc_setAssociatedObject(object, key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(object, key, newValue, policy)
         return newValue
     }
     return value
