@@ -9,8 +9,8 @@ This set of methods helps to reduce an amount of a boilerplate code when working
 You can add Associate to an Xcode project by adding it as a package dependency.
 
 From the File menu, select Add Packages...
-Enter "https://github.com/wowbroforce/Associate" into the package repository URL text field and than add Associate directly to your application.
 
+Enter "https://github.com/wowbroforce/Associate" into the package repository URL text field and than add Associate directly to your application.
 
 ## Usage
 
