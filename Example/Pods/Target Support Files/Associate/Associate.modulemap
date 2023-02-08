@@ -1,6 +1,0 @@
-framework module Associate {
-  umbrella header "Associate-umbrella.h"
-
-  export *
-  module * { export * }
-}
